@@ -49,17 +49,17 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #     e. The following code snippet attempts to return the number
 #          of integers from r to s, inclusive, whose cosines are positive.
 #          It has at least 5 distinct errors (one per line).  What are they?
+#               count=0
+#              for k in range(s-r+1):
 #
-#              for k in range(r , s+1):
-#                  count = 0#
-#                  if math.cos(r) > 0:#
-#                      count = 1#
+#                  if math.cos(k+r) > 0:#
+#                      count +=1
 #                  return count
 #
 #     f. The code in the "graphics accumulation" example below includes:
 #            for _ in range(n):
 #        What does the   _   (underscore) mean?
-#        put in a unknown like i, k.
+#        a loop variable that is not used in the loop
 #     g. The code in the "graphics accumulation" example below includes:
 #
 #              x = starting_point.x
@@ -85,7 +85,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #                  center = rg.Point(x + (k * diameter), y)
 #                  circle = rg.Circle(point, radius)
 #                  circle.attach_to(window)
-#                  x = x + (2 * radius)
+#
 #
 ###############################################################################
 #   *** MAKE SURE YOU UNDERSTAND THE 3   ACCUMULATOR   PATTERNS    ***
