@@ -9,8 +9,8 @@ Additionally, it emphasizes that you must
 before you can implement a solution to the problem in Python.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Zichen Tan.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -64,7 +64,6 @@ def run_test_draw_parallel_lines():
     # Test 3:
     left_most_point = rg.Point(20, 20)
     draw_parallel_lines(12, left_most_point, 470, window2)
-
     window2.close_on_mouse_click()
 
 
@@ -110,7 +109,10 @@ def draw_parallel_lines(n, point, length, window):
     ###########################################################################
     # -------------------------------------------------------------------------
 
-
+    for k in range(n):
+        line = rg.Line(rg.Point(point.x, point.y+k*30), rg.Point(point.x+length, point.y+k*30))
+        line.attach_to(window)
+    window.render()
 def run_test_draw_lines():
     """ Tests the   draw_lines  function. """
     print()
@@ -174,7 +176,10 @@ def draw_lines(n, point, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
-
+    for i in range(n):
+        line = rg.Line(rg.Point(point.x, point.y), rg.Point(point.x+100, point.y+100-(200/(n-1))*i))
+        line.attach_to(window)
+        window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
